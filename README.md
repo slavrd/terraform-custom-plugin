@@ -1,6 +1,6 @@
 # Terraform custom plugin
 
-A simple terraform project to show the use of a custom built plugin. The project includes also a Vagrant configuration to build a Linux machine with GoLang installed in order to build and use the plugin.
+A simple terraform project to show the use of a custom built plugin. The project includes also a Vagrant configuration to create a Linux machine with Go installed in order to build and use the plugin.
 
 ## Build the Vagrant machine
 
@@ -25,6 +25,21 @@ The project already includes a compiled binary for Linux amd64 but if you want t
 
 ## Run Terraform
 
-* On the Vagrant machine change to the shared folder - `cd /vagrant`
+* If logged on the Vagrant machine change to the shared folder - `cd /vagrant`
 * Run `terraform init`
 * Run `terraform apply`
+
+## Running Kitchen-CI tests
+
+The instructions bellow assume that you are using the included Vagrant project which has the Kitchen-CI prerequisites installed.
+
+* Go to the shared folder - `cd /vagrant`
+* Install the Ruby gems from the Gemfile with bundler - `bundle install`
+* Build kitchen environment - `bundle exec kitchen converge ubuntu`
+* Run kitchen tests - `bundle exec kitchen verify ubuntu`
+* Destroy kitchen environment - `bundle exec kitchen destroy ubuntu`
+* Automatically build, test, destroy - `bundle exec kitchen test ubuntu`
+
+A successful kitchen test should look like:
+
+![kitchen pass](screenshots/kitchen-pass.png)

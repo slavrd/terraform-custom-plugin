@@ -1,0 +1,5 @@
+---
+name: default
+attributes:
+  - name: external_ip
+    type: string
