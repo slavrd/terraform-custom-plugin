@@ -35,10 +35,10 @@ The instructions bellow assume that you are using the included Vagrant project w
 
 * Go to the shared folder - `cd /vagrant`
 * Install the Ruby gems from the Gemfile with bundler - `bundle install`
-* Build kitchen environment - `bundle exec kitchen converge ubuntu`
-* Run kitchen tests - `bundle exec kitchen verify ubuntu`
-* Destroy kitchen environment - `bundle exec kitchen destroy ubuntu`
-* Automatically build, test, destroy - `bundle exec kitchen test ubuntu`
+* Build kitchen environment - `bundle exec kitchen converge`
+* Run kitchen tests - `bundle exec kitchen verify`
+* Destroy kitchen environment - `bundle exec kitchen destroy`
+* Automatically build, test, destroy - `bundle exec kitchen test`
 
 A successful kitchen test should look like:
 
